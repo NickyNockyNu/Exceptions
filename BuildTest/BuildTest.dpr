@@ -12,7 +12,7 @@ uses
 var
   p: PInteger;
 begin
-  p := PInteger(123);
+  p := PInteger($11223344);
 
   // Write access violation:
   //p^ := 10;

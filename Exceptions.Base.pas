@@ -105,17 +105,19 @@ function PtrToStr(AValue: Pointer): String;
 const
   HexChars = '0123456789ABCDEF';
 var
+  Size: Integer;
   Addr: UIntPtr;
 begin
   Addr := UIntPtr(AValue);
+  Size := SizeOf(Addr) shl 1;
 
-  for var i := 1 to SizeOf(Addr) shl 1 do
+  SetLength(Result, Size);
+
+  for var i := 1 to Size do
   begin
-    Result := HexChars[(Addr and $F) + 1] + Result;
-    Addr   := Addr shr 4;
+    Result[Size - i + 1] := HexChars[(Addr and $F) + 1];
+    Addr := Addr shr 4;
   end;
-
-  Result := '0x' + Result;
 end;
 
 function ExeFile: String;
