@@ -1,8 +1,8 @@
 {
   Exceptions.Assertions.pas
-    Assertion support without SysUtils
+    Assertions without SysUtils
     Copyright (c) 2026 Nicholas Smith (writetonik@gmail.com)
-    https://github.com/NickyNockyNu/
+    https://github.com/NickyNockyNu/Exceptions
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
